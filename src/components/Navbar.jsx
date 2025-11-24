@@ -1,0 +1,103 @@
+import { useState, useEffect } from 'react'
+import { Menu, X, Music } from 'lucide-react'
+import FooterImage from '../assets/Hasii.png'
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const navItems = [
+    { name: '𝐇𝐨𝐦𝐞', href: '#home' },
+    { name: '𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬', href: '#features' },
+    { name: '𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬', href: '#commands' }
+  ]
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'glass shadow-lg' : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <a href="#home" className="flex items-center space-x-2 group">
+            <div className="p-2 rounded-lg bg-spotify-green group-hover:bg-spotify-green-light transition-all duration-300">
+              <Music className="w-6 h-6 text-black" />
+            </div>
+            <span className="text-xl font-bold text-spotify-green">𝐇𝐚𝐬𝐢𝐢 𝐌𝐮𝐬𝐢𝐜</span>
+          </a>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
+                className="text-gray-300 hover:text-spotify-green transition-colors duration-200 font-medium"
+              >
+                {item.name}
+              </a>
+            ))}
+            <a
+              href="https://t.me/hasiimusic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐂𝐡𝐚𝐧𝐧𝐞𝐥
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 rounded-lg glass hover:bg-spotify-surface-light transition-colors"
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden glass border-t border-spotify-surface-light animate-slide-down">
+          <div className="px-4 py-4 space-y-3">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
+                className="block text-gray-300 hover:text-spotify-green transition-colors duration-200 font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+            <a
+              href="https://t.me/HasiMusicBot?startgroup=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary block text-center"
+            >
+              𝐀𝐝𝐝 𝐭𝐨 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
+            </a>
+          </div>
+        </div>
+      )}
+    </nav>
+  )
+}
+
+export default Navbar
