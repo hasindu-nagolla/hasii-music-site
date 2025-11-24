@@ -37,4 +37,3 @@ build/
 Thumbs.db
 .DS_Store
 .vscode
-package-lock.json
