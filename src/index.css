@@ -7,8 +7,20 @@
     @apply bg-spotify-dark;
     @apply text-white antialiased;
     @apply min-h-screen;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
   }
-  
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+  }
+
   * {
     @apply scroll-smooth;
   }
@@ -18,11 +30,11 @@
   .glass {
     @apply bg-spotify-surface/80 backdrop-blur-lg border border-spotify-surface-light;
   }
-  
+
   .gradient-text {
     @apply bg-gradient-to-r from-spotify-green via-spotify-green-light to-spotify-green bg-clip-text text-transparent;
   }
-  
+
   .btn-primary {
     @apply px-6 py-3 rounded-full font-semibold;
     @apply bg-spotify-green text-black;
@@ -30,20 +42,20 @@
     @apply transform hover:scale-105 transition-all duration-300;
     @apply shadow-lg hover:shadow-xl hover:shadow-spotify-green/50;
   }
-  
+
   .btn-secondary {
     @apply px-6 py-3 rounded-full font-semibold;
     @apply glass hover:bg-spotify-surface-light;
     @apply transform hover:scale-105 transition-all duration-300;
   }
-  
+
   .feature-card {
     @apply glass p-6 rounded-2xl;
     @apply transform hover:scale-105 transition-all duration-300;
     @apply hover:shadow-2xl hover:shadow-spotify-green/20;
     @apply hover:border-spotify-green/50;
   }
-  
+
   .section-padding {
     @apply py-20 px-4 md:px-8 lg:px-16;
   }
@@ -59,7 +71,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #1DB954, #1ED760);
+  background: linear-gradient(to bottom, #1db954, #1ed760);
   border-radius: 5px;
 }
 

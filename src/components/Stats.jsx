@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { Users, Music as MusicIcon, Radio, TrendingUp } from 'lucide-react'
+import { useState, useEffect } from "react";
+import { Users, Music as MusicIcon, Radio, TrendingUp } from "lucide-react";
 
 const Stats = () => {
   const [counters, setCounters] = useState({
@@ -7,77 +7,77 @@ const Stats = () => {
     songs: 0,
     stations: 0,
     uptime: 0,
-  })
+  });
 
   const stats = [
     {
       icon: Users,
-      label: '𝐀𝐜𝐭𝐢𝐯𝐞 𝐆𝐫𝐨𝐮𝐩𝐬',
-      value: '𝟏𝟎+',
+      label: "𝐀𝐜𝐭𝐢𝐯𝐞 𝐆𝐫𝐨𝐮𝐩𝐬",
+      value: "𝟏𝟎+",
       target: 10,
-      key: 'groups',
+      key: "groups",
     },
     {
       icon: MusicIcon,
-      label: '𝐒𝐨𝐧𝐠𝐬 𝐏𝐥𝐚𝐲𝐞𝐝',
-      value: '𝟐.𝟑𝐊+',
+      label: "𝐒𝐨𝐧𝐠𝐬 𝐏𝐥𝐚𝐲𝐞𝐝",
+      value: "𝟐.𝟑𝐊+",
       target: 2300,
-      key: 'songs',
+      key: "songs",
     },
     {
       icon: Radio,
-      label: '𝐑𝐚𝐝𝐢𝐨 𝐒𝐭𝐚𝐭𝐢𝐨𝐧𝐬',
-      value: '𝟐𝟎+',
+      label: "𝐑𝐚𝐝𝐢𝐨 𝐒𝐭𝐚𝐭𝐢𝐨𝐧𝐬",
+      value: "𝟐𝟎+",
       target: 20,
-      key: 'stations',
+      key: "stations",
     },
     {
       icon: TrendingUp,
-      label: '𝐔𝐩𝐭𝐢𝐦𝐞',
-      value: '𝟗𝟎%',
+      label: "𝐔𝐩𝐭𝐢𝐦𝐞",
+      value: "𝟗𝟎%",
       target: 90,
-      key: 'uptime',
+      key: "uptime",
     },
-  ]
+  ];
 
   useEffect(() => {
-    const duration = 2000 // 2 seconds
-    const steps = 60
-    const interval = duration / steps
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const interval = duration / steps;
 
-    stats.forEach(stat => {
-      let current = 0
-      const increment = stat.target / steps
+    stats.forEach((stat) => {
+      let current = 0;
+      const increment = stat.target / steps;
 
       const timer = setInterval(() => {
-        current += increment
+        current += increment;
         if (current >= stat.target) {
-          current = stat.target
-          clearInterval(timer)
+          current = stat.target;
+          clearInterval(timer);
         }
-        setCounters(prev => ({
+        setCounters((prev) => ({
           ...prev,
           [stat.key]: Math.floor(current),
-        }))
-      }, interval)
-    })
-  }, [])
+        }));
+      }, interval);
+    });
+  }, []);
 
   return (
     <section className="section-padding bg-spotify-surface">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-spotify-green">𝐓𝐫𝐮𝐬𝐭𝐞𝐝 𝐛𝐲 𝐔𝐬𝐞𝐫𝐬</span>
+            <span className="text-spotify-green">Trusted by Users</span>
           </h2>
           <p className="text-gray-400 text-lg">
-            𝐉𝐨𝐢𝐧 𝐭𝐡𝐞 𝐠𝐫𝐨𝐰𝐢𝐧𝐠 𝐜𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐨𝐟 𝐒𝐫𝐢 𝐋𝐚𝐧𝐤𝐚𝐧 𝐦𝐮𝐬𝐢𝐜 𝐥𝐨𝐯𝐞𝐫𝐬
+            Join the growing community of Sri Lankan music lovers
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => {
-            const Icon = stat.icon
+            const Icon = stat.icon;
             return (
               <div
                 key={index}
@@ -92,12 +92,12 @@ const Stats = () => {
                 </div>
                 <div className="text-gray-400 font-medium">{stat.label}</div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Stats
+export default Stats;

@@ -15,11 +15,21 @@ const Hero = () => {
             <div className="absolute inset-0 bg-spotify-green rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
 
             {/* Rounded Image Only */}
-            <div className="relative animate-float w-32 h-32 overflow-hidden rounded-full">
+            <div className="relative animate-float w-32 h-32 overflow-hidden rounded-full bg-spotify-surface">
               <img
                 src={HasiiLogo}
-                alt="Logo"
+                alt="Hasii Music Bot Logo"
                 className="w-full h-full object-cover"
+                width="128"
+                height="128"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                  e.target.parentElement.innerHTML =
+                    '<div class="w-full h-full flex items-center justify-center bg-spotify-green text-black text-4xl font-bold">H</div>';
+                }}
               />
             </div>
           </div>
@@ -27,21 +37,23 @@ const Hero = () => {
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
-          <span className="text-spotify-green">˹𝐇𝐚𝐬𝐢𝐢 ✘ 𝐌𝐮𝐬𝐢𝐜˼</span>
+          <span className="text-spotify-green">ʜᴀꜱɪɪ ꭙ ᴍᴜꜱɪᴄ</span>
         </h1>
 
         <p
           className="text-xl md:text-2xl text-gray-300 mb-4 animate-slide-up"
           style={{ animationDelay: "0.1s" }}
         >
-          𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐌𝐮𝐬𝐢𝐜 𝐒𝐭𝐫𝐞𝐚𝐦𝐢𝐧𝐠 𝐁𝐨𝐭
+          Advanced Telegram Music Streaming Bot
         </p>
 
         <p
           className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto animate-slide-up"
           style={{ animationDelay: "0.2s" }}
         >
-          𝐄𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞 𝐬𝐭𝐮𝐝𝐢𝐨-𝐪𝐮𝐚𝐥𝐢𝐭𝐲 𝐚𝐮𝐝𝐢𝐨 𝐰𝐢𝐭𝐡 𝐘𝐨𝐮𝐓𝐮𝐛𝐞 𝐢𝐧𝐭𝐞𝐠𝐫𝐚𝐭𝐢𝐨𝐧, 𝟐𝟎+ 𝐥𝐢𝐯𝐞 𝐒𝐫𝐢 𝐋𝐚𝐧𝐤𝐚𝐧 𝐫𝐚𝐝𝐢𝐨 𝐬𝐭𝐚𝐭𝐢𝐨𝐧𝐬, 𝐚𝐧𝐝 𝐩𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐪𝐮𝐞𝐮𝐞 𝐦𝐚𝐧𝐚𝐠𝐞𝐦𝐞𝐧𝐭 𝐟𝐨𝐫 𝐲𝐨𝐮𝐫 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐯𝐨𝐢𝐜𝐞 𝐜𝐡𝐚𝐭𝐬.
+          Experience studio-quality audio with YouTube integration, 20+ live Sri
+          Lankan radio stations, and powerful queue management for your Telegram
+          voice chats.
         </p>
 
         {/* CTA Buttons */}
@@ -56,7 +68,7 @@ const Hero = () => {
             className="btn-primary flex items-center gap-2"
           >
             <MessageCircle className="w-5 h-5" />
-            𝐀𝐝𝐝 𝐭𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩
+            Add to Your Group
             <ArrowRight className="w-5 h-5" />
           </a>
 
@@ -67,7 +79,7 @@ const Hero = () => {
             className="btn-secondary flex items-center gap-2"
           >
             <Github className="w-5 h-5" />
-            𝐕𝐢𝐞𝐰 𝐨𝐧 𝐆𝐢𝐭𝐇𝐮𝐛
+            View on GitHub
           </a>
         </div>
 

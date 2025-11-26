@@ -1,29 +1,29 @@
-import { useState, useEffect } from 'react'
-import { Menu, X, Music } from 'lucide-react'
-import FooterImage from '../assets/Hasii.png'
+import { useState, useEffect } from "react";
+import { Menu, X, Music } from "lucide-react";
+import FooterImage from "../assets/Hasii.png";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
-    { name: '𝐇𝐨𝐦𝐞', href: '#home' },
-    { name: '𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬', href: '#features' },
-    { name: '𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬', href: '#commands' }
-  ]
+    { name: "Home", href: "#home" },
+    { name: "Features", href: "#features" },
+    { name: "Commands", href: "#commands" },
+  ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass shadow-lg' : 'bg-transparent'
+        isScrolled ? "glass shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +33,9 @@ const Navbar = () => {
             <div className="p-2 rounded-lg bg-spotify-green group-hover:bg-spotify-green-light transition-all duration-300">
               <Music className="w-6 h-6 text-black" />
             </div>
-            <span className="text-xl font-bold text-spotify-green">𝐇𝐚𝐬𝐢𝐢 𝐌𝐮𝐬𝐢𝐜</span>
+            <span className="text-xl font-bold text-spotify-green">
+              Hasii Music
+            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -42,8 +44,8 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 className="text-gray-300 hover:text-spotify-green transition-colors duration-200 font-medium"
               >
                 {item.name}
@@ -55,7 +57,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐂𝐡𝐚𝐧𝐧𝐞𝐥
+              Support Channel
             </a>
           </div>
 
@@ -64,7 +66,11 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 rounded-lg glass hover:bg-spotify-surface-light transition-colors"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
@@ -77,8 +83,8 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noopener noreferrer' : undefined}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 className="block text-gray-300 hover:text-spotify-green transition-colors duration-200 font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -91,13 +97,13 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="btn-primary block text-center"
             >
-              𝐀𝐝𝐝 𝐭𝐨 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
+              Add to Telegram
             </a>
           </div>
         </div>
       )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
