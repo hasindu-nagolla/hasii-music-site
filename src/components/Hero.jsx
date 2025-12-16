@@ -1,6 +1,5 @@
 import { Music, Github, MessageCircle, ArrowRight } from "lucide-react";
 import HasiiLogo from "../assets/Hasii.png";
-import TelegramLogin from "./TelegramLogin";
 
 const Hero = () => {
   return (
@@ -83,9 +82,6 @@ const Hero = () => {
             View on GitHub
           </a>
         </div>
-
-        {/* Telegram Login Widget */}
-        <TelegramLogin />
 
         {/* Tech Stack Badges */}
         <div
