@@ -55,8 +55,18 @@ const Commands = () => {
   };
 
   return (
-    <section id="commands" className="section-padding bg-black/30">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="commands"
+      className="section-padding bg-black/30 relative overflow-hidden"
+    >
+      {/* Animated gradient orbs */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div
+        className="absolute bottom-0 right-0 w-96 h-96 bg-spotify-green/10 rounded-full blur-3xl animate-pulse-slow"
+        style={{ animationDelay: "2s" }}
+      ></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-spotify-green">Command Reference</span>
@@ -92,16 +102,21 @@ const Commands = () => {
           {commandCategories[activeTab].commands.map((command, index) => (
             <div
               key={index}
-              className="glass p-6 rounded-xl hover:bg-white/15 transition-all duration-300 animate-scale-in"
+              className="group glass p-6 rounded-xl hover:bg-white/15 transition-all duration-300 animate-scale-in relative overflow-hidden hover:border-spotify-green/50"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="flex items-start gap-3">
-                <Terminal className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+              {/* Hover gradient effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-spotify-green/0 to-spotify-green/0 group-hover:from-spotify-green/10 group-hover:to-transparent transition-all duration-500"></div>
+
+              <div className="flex items-start gap-3 relative z-10">
+                <Terminal className="w-5 h-5 text-spotify-green mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <div>
-                  <code className="text-lg font-mono text-blue-300 font-semibold">
+                  <code className="text-lg font-mono text-spotify-green font-semibold group-hover:text-spotify-green-light transition-colors">
                     {command.cmd}
                   </code>
-                  <p className="text-gray-400 mt-2 text-sm">{command.desc}</p>
+                  <p className="text-gray-400 mt-2 text-sm group-hover:text-gray-300 transition-colors">
+                    {command.desc}
+                  </p>
                 </div>
               </div>
             </div>

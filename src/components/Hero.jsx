@@ -5,9 +5,18 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="section-padding min-h-screen flex items-center justify-center pt-20"
+      className="section-padding min-h-screen flex items-center justify-center pt-20 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto text-center">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-spotify-green/20 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse-slow"
+          style={{ animationDelay: "1.5s" }}
+        ></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto text-center relative z-10">
         {/* Animated Music Icon */}
         <div className="mb-8 flex justify-center">
           <div className="relative">
@@ -65,21 +74,22 @@ const Hero = () => {
             href="https://t.me/HasiMusicBot?startgroup=true"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary flex items-center gap-2"
+            className="btn-primary flex items-center gap-2 group relative overflow-hidden"
           >
-            <MessageCircle className="w-5 h-5" />
-            Add to Your Group
-            <ArrowRight className="w-5 h-5" />
+            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+            <MessageCircle className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform" />
+            <span className="relative z-10">Add to Your Group</span>
+            <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
           </a>
 
           <a
             href="https://github.com/hasindu-nagolla/HasiiMusicBot"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-secondary flex items-center gap-2"
+            className="btn-secondary flex items-center gap-2 group"
           >
-            <Github className="w-5 h-5" />
-            View on GitHub
+            <Github className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+            <span>View on GitHub</span>
           </a>
         </div>
 

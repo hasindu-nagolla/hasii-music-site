@@ -1,11 +1,12 @@
-import { HashRouter as Router } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Features from './components/Features'
-import Commands from './components/Commands'
-import Stats from './components/Stats'
-import Footer from './components/Footer'
-import ParticlesBackground from './components/ParticlesBackground'
+import { HashRouter as Router } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import Commands from "./components/Commands";
+import Stats from "./components/Stats";
+import Footer from "./components/Footer";
+import ParticlesBackground from "./components/ParticlesBackground";
+import FloatingCTA from "./components/FloatingCTA";
 
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
           <Commands />
         </main>
         <Footer />
+        <FloatingCTA />
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

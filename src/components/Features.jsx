@@ -62,8 +62,18 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="section-padding bg-black/30">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="features"
+      className="section-padding bg-black/30 relative overflow-hidden"
+    >
+      {/* Animated gradient background */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div
+        className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"
+        style={{ animationDelay: "1.5s" }}
+      ></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-spotify-green">Powerful Features</span>
@@ -80,16 +90,26 @@ const Features = () => {
             return (
               <div
                 key={index}
-                className="feature-card group animate-scale-in"
+                className="feature-card group animate-scale-in relative overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="p-3 rounded-xl bg-spotify-green w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-6 h-6 text-black" />
+                {/* Animated gradient glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-spotify-green/0 via-spotify-green/0 to-spotify-green/0 group-hover:from-spotify-green/20 group-hover:via-spotify-green/5 group-hover:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Shine effect */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+
+                <div className="relative z-10">
+                  <div className="p-3 rounded-xl bg-spotify-green w-fit mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-spotify-green/50">
+                    <Icon className="w-6 h-6 text-black" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-spotify-green transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-white">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-400">{feature.description}</p>
               </div>
             );
           })}
