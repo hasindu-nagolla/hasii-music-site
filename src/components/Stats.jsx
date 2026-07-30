@@ -13,9 +13,9 @@ const Stats = () => {
   const stats = [
     {
       icon: Users,
-      label: "Active Groups",
-      value: "520+",
-      target: 520,
+      label: "Served Groups",
+      value: "540+",
+      target: 540,
       key: "groups",
     },
     {
