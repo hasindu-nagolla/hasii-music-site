@@ -1,4 +1,3 @@
-import { Music, Github, MessageCircle, ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (

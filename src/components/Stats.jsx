@@ -1,8 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Users, Music as MusicIcon, Radio, TrendingUp } from "lucide-react";
 
 const Stats = () => {
-  const cardRefs = useRef([]);
   const [counters, setCounters] = useState({
     groups: 0,
     songs: 0,
@@ -18,7 +17,7 @@ const Stats = () => {
       target: 540,
       key: "groups",
     },
-    {
+     {
       icon: Users,
       label: "Active Chats",
       value: "100+",
@@ -92,7 +91,6 @@ const Stats = () => {
             return (
               <div
                 key={index}
-                ref={(el) => (cardRefs.current[index] = el)}
                 className="group relative bg-white dark:bg-gray-800 p-8 rounded-xl text-center border border-gray-100 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors duration-200"
                 style={{
                   animationDelay: `${index * 0.1}s`,

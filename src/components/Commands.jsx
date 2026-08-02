@@ -1,9 +1,6 @@
 import { useState } from "react";
 import {
   Play,
-  Pause,
-  SkipForward,
-  Square,
   Settings,
   Shield,
   Terminal,
@@ -22,7 +19,7 @@ const Commands = () => {
         { cmd: "/queue", desc: "View current queue and now playing track" },
         { cmd: "/ping", desc: "Check bot status and system statistics" },
         { cmd: "/help", desc: "Display help menu with all commands" },
-        { cmd: "/lang", desc: "Change bot language (si, ta, hi, ms, tl, ru)" },
+        { cmd: "/lang (Upcoming)", desc: "Change bot language (English/Sinhala)" },
       ],
     },
     admin: {
@@ -77,10 +74,11 @@ const Commands = () => {
               <button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-md font-semibold transition-all duration-200 border ${activeTab === key
+                className={`flex items-center gap-2 px-6 py-3 rounded-md font-semibold transition-all duration-200 border ${
+                  activeTab === key
                     ? "bg-brand-dark border-brand-dark text-white dark:bg-brand-primary dark:border-brand-primary dark:text-brand-dark"
                     : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
-                  }`}
+                }`}
               >
                 <Icon className="w-5 h-5" />
                 {category.title}

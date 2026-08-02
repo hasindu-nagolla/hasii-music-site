@@ -24,26 +24,9 @@
 }
 
 @layer components {
-  .btn-primary {
-    @apply px-6 py-3 rounded-md font-semibold;
-    @apply bg-brand-dark text-white dark:bg-brand-primary dark:text-brand-dark;
-    @apply hover:bg-gray-800 dark:hover:bg-brand-primary/90 active:scale-95;
-    @apply transition-all duration-200;
-  }
-
-  .btn-secondary {
-    @apply px-6 py-3 rounded-md font-semibold text-brand-dark dark:text-gray-200;
-    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 active:scale-95;
-    @apply transition-all duration-200;
-  }
-
   .feature-card {
     @apply bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 relative z-10;
     @apply transition-all duration-200;
-  }
-
-  .section-padding {
-    @apply py-24 px-4 md:px-8 lg:px-16;
   }
 }
 
