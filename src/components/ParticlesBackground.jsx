@@ -41,7 +41,7 @@ const ParticlesBackground = () => {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(29, 185, 84, ${this.opacity})`;
+        ctx.fillStyle = `rgba(16, 185, 129, ${this.opacity})`; // Updated to match brand-primary (#10B981)
         ctx.fill();
       }
     }
@@ -73,7 +73,7 @@ const ParticlesBackground = () => {
 
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(29, 185, 84, ${0.15 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(16, 185, 129, ${0.15 * (1 - distance / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
@@ -97,7 +97,7 @@ const ParticlesBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 z-0 pointer-events-none"
-      style={{ opacity: 0.3 }}
+      style={{ opacity: 0.8 }} // Increased opacity so it's more visible
     />
   );
 };

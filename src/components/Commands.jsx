@@ -22,7 +22,7 @@ const Commands = () => {
         { cmd: "/queue", desc: "View current queue and now playing track" },
         { cmd: "/ping", desc: "Check bot status and system statistics" },
         { cmd: "/help", desc: "Display help menu with all commands" },
-        { cmd: "/lang (Upcoming)", desc: "Change bot language (English/Sinhala)" },
+        { cmd: "/lang", desc: "Change bot language (si, ta, hi, ms, tl, ru)" },
       ],
     },
     admin: {
@@ -57,14 +57,14 @@ const Commands = () => {
   return (
     <section
       id="commands"
-      className="py-24 bg-white relative overflow-hidden border-t border-gray-100"
+      className="py-24 bg-white dark:bg-gray-800 relative overflow-hidden border-t border-gray-100 dark:border-gray-700"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-dark">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-dark dark:text-white">
             Command Reference
           </h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-500 dark:text-gray-400 text-lg">
             Complete list of available commands organized by permission level
           </p>
         </div>
@@ -77,11 +77,10 @@ const Commands = () => {
               <button
                 key={key}
                 onClick={() => setActiveTab(key)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-md font-semibold transition-all duration-200 border ${
-                  activeTab === key
-                    ? "bg-brand-dark border-brand-dark text-white"
-                    : "bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
-                }`}
+                className={`flex items-center gap-2 px-6 py-3 rounded-md font-semibold transition-all duration-200 border ${activeTab === key
+                    ? "bg-brand-dark border-brand-dark text-white dark:bg-brand-primary dark:border-brand-primary dark:text-brand-dark"
+                    : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
+                  }`}
               >
                 <Icon className="w-5 h-5" />
                 {category.title}
@@ -95,16 +94,16 @@ const Commands = () => {
           {commandCategories[activeTab].commands.map((command, index) => (
             <div
               key={index}
-              className="group bg-white p-6 rounded-xl border border-gray-100 hover:border-gray-300 transition-colors duration-200 relative overflow-hidden"
+              className="group bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 hover:border-gray-300 transition-colors duration-200 relative overflow-hidden"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <div className="flex items-start gap-3 relative z-10">
                 <Terminal className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
                 <div>
-                  <code className="text-lg font-mono text-brand-dark font-bold">
+                  <code className="text-lg font-mono text-brand-dark dark:text-white font-bold">
                     {command.cmd}
                   </code>
-                  <p className="text-gray-500 mt-2 text-sm">{command.desc}</p>
+                  <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm">{command.desc}</p>
                 </div>
               </div>
             </div>
@@ -112,12 +111,12 @@ const Commands = () => {
         </div>
 
         {/* Command Usage Note */}
-        <div className="mt-12 bg-brand-surface border border-brand-accent/50 p-6 rounded-xl max-w-3xl mx-auto">
-          <h3 className="text-lg font-semibold mb-3 flex items-center gap-2 text-brand-dark">
+        <div className="mt-12 bg-brand-surface dark:bg-gray-800/50 border border-brand-accent/50 dark:border-gray-700 p-6 rounded-xl max-w-3xl mx-auto">
+          <h3 className="text-lg font-semibold mb-3 flex items-center gap-2 text-brand-dark dark:text-white">
             <Terminal className="w-5 h-5 text-brand-primary" />
             Usage Notes
           </h3>
-          <ul className="space-y-2 text-gray-600 text-sm">
+          <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
             <li className="flex items-start gap-2">
               <span className="text-brand-primary mt-1 font-bold">•</span>
               <span>

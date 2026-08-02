@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-brand-surface-light text-brand-dark antialiased;
+    @apply bg-brand-surface-light dark:bg-brand-dark text-brand-dark dark:text-gray-100 antialiased;
     @apply min-h-screen;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
@@ -26,19 +26,19 @@
 @layer components {
   .btn-primary {
     @apply px-6 py-3 rounded-md font-semibold;
-    @apply bg-brand-dark text-white;
-    @apply hover:bg-gray-800 active:scale-95;
+    @apply bg-brand-dark text-white dark:bg-brand-primary dark:text-brand-dark;
+    @apply hover:bg-gray-800 dark:hover:bg-brand-primary/90 active:scale-95;
     @apply transition-all duration-200;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 rounded-md font-semibold text-brand-dark;
-    @apply bg-white border border-gray-200 hover:border-gray-300 hover:bg-gray-50 active:scale-95;
+    @apply px-6 py-3 rounded-md font-semibold text-brand-dark dark:text-gray-200;
+    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 active:scale-95;
     @apply transition-all duration-200;
   }
 
   .feature-card {
-    @apply bg-white p-6 rounded-xl border border-gray-100 relative z-10;
+    @apply bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700 relative z-10;
     @apply transition-all duration-200;
   }
 
@@ -57,12 +57,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d1d5db; /* gray-300 */
+  background: #d1d5db;
+  /* gray-300 */
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af; /* gray-400 */
+  background: #9ca3af;
+  /* gray-400 */
 }
 
 /* Enhanced animations */
@@ -71,6 +73,7 @@
     transform: translateY(20px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -82,6 +85,7 @@
     transform: translateY(-20px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -92,6 +96,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -111,6 +116,7 @@
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

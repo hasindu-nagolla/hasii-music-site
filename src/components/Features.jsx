@@ -27,16 +27,16 @@ const Features = () => {
         <div className="relative mb-32">
           {/* Step indicator */}
           <div className="flex flex-col items-center mb-12 relative z-10">
-            <div className="w-12 h-12 bg-brand-dark text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
+            <div className="w-12 h-12 bg-brand-dark dark:bg-brand-primary text-white dark:text-brand-dark rounded-full flex items-center justify-center font-bold text-xl mb-4">
               1
             </div>
             <div className="text-brand-primary font-semibold mb-2">
               Setup & Connect
             </div>
-            <h2 className="text-3xl font-bold text-brand-dark">
+            <h2 className="text-3xl font-bold text-brand-dark dark:text-white">
               Quick Setup
             </h2>
-            <p className="text-gray-500 mt-4 max-w-2xl text-center">
+            <p className="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl text-center">
               Add the bot to your group and start playing music immediately.
             </p>
           </div>
@@ -45,13 +45,13 @@ const Features = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
             {/* Card 1 */}
             <div className="feature-card flex flex-col items-start text-left">
-              <div className="w-10 h-10 rounded-md bg-brand-accent flex items-center justify-center mb-4 text-brand-secondary">
+              <div className="w-10 h-10 rounded-md bg-brand-accent dark:bg-brand-primary/20 flex items-center justify-center mb-4 text-brand-secondary dark:text-brand-primary">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-brand-dark mb-2">
+              <h3 className="font-bold text-brand-dark dark:text-white mb-2">
                 Fast Installation
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Add to your group in seconds. We help you validate your
                 requirements and get started without any complex configurations
                 before building your community.
@@ -59,11 +59,11 @@ const Features = () => {
             </div>
             {/* Card 2 */}
             <div className="feature-card flex flex-col items-start text-left">
-              <div className="w-10 h-10 rounded-md bg-brand-accent flex items-center justify-center mb-4 text-brand-secondary">
+              <div className="w-10 h-10 rounded-md bg-brand-accent dark:bg-brand-primary/20 flex items-center justify-center mb-4 text-brand-secondary dark:text-brand-primary">
                 <Shield className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-brand-dark mb-2">Admin Security</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <h3 className="font-bold text-brand-dark dark:text-white mb-2">Admin Security</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Secure role-based access. Only authorized admins can manage
                 playback and settings, protecting your community from spam and
                 abuse.
@@ -71,11 +71,11 @@ const Features = () => {
             </div>
             {/* Card 3 */}
             <div className="feature-card flex flex-col items-start text-left">
-              <div className="w-10 h-10 rounded-md bg-brand-accent flex items-center justify-center mb-4 text-brand-secondary">
+              <div className="w-10 h-10 rounded-md bg-brand-accent dark:bg-brand-primary/20 flex items-center justify-center mb-4 text-brand-secondary dark:text-brand-primary">
                 <Globe className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-brand-dark mb-2">VPS Ready</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <h3 className="font-bold text-brand-dark dark:text-white mb-2">VPS Ready</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Built on a solid foundation with proven open-source
                 technologies. Our optimized tech stack ensures scalability and
                 long-term 24/7 uptime.
@@ -88,16 +88,16 @@ const Features = () => {
         <div className="relative mb-32">
           {/* Step indicator */}
           <div className="flex flex-col items-center mb-12 relative z-10">
-            <div className="w-12 h-12 bg-brand-dark text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
+            <div className="w-12 h-12 bg-brand-dark dark:bg-brand-primary text-white dark:text-brand-dark rounded-full flex items-center justify-center font-bold text-xl mb-4">
               2
             </div>
             <div className="text-brand-primary font-semibold mb-2">
               High-Quality Playback
             </div>
-            <h2 className="text-3xl font-bold text-brand-dark">
+            <h2 className="text-3xl font-bold text-brand-dark dark:text-white">
               High-Quality Playback
             </h2>
-            <p className="text-gray-500 mt-4 max-w-2xl text-center">
+            <p className="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl text-center">
               Stream directly from YouTube and radio stations with crisp, uninterrupted audio.
             </p>
           </div>
@@ -106,24 +106,24 @@ const Features = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
             {/* Card 1 */}
             <div className="feature-card flex flex-col items-start text-left">
-              <div className="w-10 h-10 rounded-md bg-brand-accent flex items-center justify-center mb-4 text-brand-secondary">
+              <div className="w-10 h-10 rounded-md bg-brand-accent dark:bg-brand-primary/20 flex items-center justify-center mb-4 text-brand-secondary dark:text-brand-primary">
                 <Play className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-brand-dark mb-2">
+              <h3 className="font-bold text-brand-dark dark:text-white mb-2">
                 YouTube Support
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Play any track directly from YouTube. Run rapid commands to
                 fetch any song instantly without leaving your Telegram chat.
               </p>
             </div>
             {/* Card 2 */}
             <div className="feature-card flex flex-col items-start text-left">
-              <div className="w-10 h-10 rounded-md bg-brand-accent flex items-center justify-center mb-4 text-brand-secondary">
+              <div className="w-10 h-10 rounded-md bg-brand-accent dark:bg-brand-primary/20 flex items-center justify-center mb-4 text-brand-secondary dark:text-brand-primary">
                 <Radio className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-brand-dark mb-2">Live Radio</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <h3 className="font-bold text-brand-dark dark:text-white mb-2">Live Radio</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 70+ live Sri Lankan radio stations built-in. Make informed
                 choices and switch seamlessly between different broadcasters
                 globally.
@@ -131,11 +131,11 @@ const Features = () => {
             </div>
             {/* Card 3 */}
             <div className="feature-card flex flex-col items-start text-left">
-              <div className="w-10 h-10 rounded-md bg-brand-accent flex items-center justify-center mb-4 text-brand-secondary">
+              <div className="w-10 h-10 rounded-md bg-brand-accent dark:bg-brand-primary/20 flex items-center justify-center mb-4 text-brand-secondary dark:text-brand-primary">
                 <Headphones className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-brand-dark mb-2">Studio Quality</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <h3 className="font-bold text-brand-dark dark:text-white mb-2">Studio Quality</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Ship features quickly with crisp audio. We implement advanced
                 codecs and continuous caching to ensure your music never
                 buffers.
@@ -148,16 +148,16 @@ const Features = () => {
         <div className="relative">
           {/* Step indicator */}
           <div className="flex flex-col items-center mb-12 relative z-10">
-            <div className="w-12 h-12 bg-brand-dark text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
+            <div className="w-12 h-12 bg-brand-dark dark:bg-brand-primary text-white dark:text-brand-dark rounded-full flex items-center justify-center font-bold text-xl mb-4">
               3
             </div>
             <div className="text-brand-primary font-semibold mb-2">
               Advanced Management
             </div>
-            <h2 className="text-3xl font-bold text-brand-dark">
+            <h2 className="text-3xl font-bold text-brand-dark dark:text-white">
               Built for Scale
             </h2>
-            <p className="text-gray-500 mt-4 max-w-2xl text-center">
+            <p className="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl text-center">
               Manage large playlists and user requests with built-in queue controls.
             </p>
           </div>
@@ -166,21 +166,21 @@ const Features = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
             {/* Card 1 */}
             <div className="feature-card flex flex-col items-start text-left">
-              <div className="w-10 h-10 rounded-md bg-brand-accent flex items-center justify-center mb-4 text-brand-secondary">
+              <div className="w-10 h-10 rounded-md bg-brand-accent dark:bg-brand-primary/20 flex items-center justify-center mb-4 text-brand-secondary dark:text-brand-primary">
                 <ListMusic className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-brand-dark mb-2">Smart Queue</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <h3 className="font-bold text-brand-dark dark:text-white mb-2">Smart Queue</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Easily skip, pause, resume, and loop tracks to manage large playlists.
               </p>
             </div>
             {/* Card 2 */}
             <div className="feature-card flex flex-col items-start text-left">
-              <div className="w-10 h-10 rounded-md bg-brand-accent flex items-center justify-center mb-4 text-brand-secondary">
+              <div className="w-10 h-10 rounded-md bg-brand-accent dark:bg-brand-primary/20 flex items-center justify-center mb-4 text-brand-secondary dark:text-brand-primary">
                 <Sliders className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-brand-dark mb-2">Audio Filters</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <h3 className="font-bold text-brand-dark dark:text-white mb-2">Audio Filters</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Customize your sound with advanced audio filters. We implement
                 bass boost, nightcore, and speed controls for ultimate playback
                 flexibility.
@@ -188,11 +188,11 @@ const Features = () => {
             </div>
             {/* Card 3 */}
             <div className="feature-card flex flex-col items-start text-left">
-              <div className="w-10 h-10 rounded-md bg-brand-accent flex items-center justify-center mb-4 text-brand-secondary">
+              <div className="w-10 h-10 rounded-md bg-brand-accent dark:bg-brand-primary/20 flex items-center justify-center mb-4 text-brand-secondary dark:text-brand-primary">
                 <Languages className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-brand-dark mb-2">Multilingual</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <h3 className="font-bold text-brand-dark dark:text-white mb-2">Multilingual</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Stay ahead of issues with fully translated interfaces. We
                 support multiple languages, ensuring zero downtime for your
                 international audience.

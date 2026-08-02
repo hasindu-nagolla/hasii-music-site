@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import logo from "../assets/download.svg"
+import { Menu, X, Sun, Moon } from "lucide-react";
+import Logo from "./Logo";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,17 +26,14 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-white/90 dark:bg-brand-dark/90 backdrop-blur-md shadow-sm dark:shadow-gray-800/50" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#home">
-            <img
-            src={logo}
-            alt="HasiiMusic"
-            className="h-12 w-auto"/>
+            <Logo className="h-12 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
@@ -45,38 +44,55 @@ const Navbar = () => {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="text-gray-500 hover:text-brand-primary text-sm transition-colors duration-200 font-medium"
+                className="text-gray-500 dark:text-gray-400 hover:text-brand-primary dark:hover:text-brand-primary text-sm transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
             ))}
+            
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+              aria-label="Toggle theme"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+
             <a
               href="https://t.me/hasiimusic"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-black text-white px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-gray-800 transition-colors"
+              className="bg-black dark:bg-brand-primary text-white dark:text-brand-dark px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-gray-800 dark:hover:bg-brand-primary/90 transition-colors"
             >
               Get in touch
             </a>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100 transition-colors"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          {/* Mobile menu and theme toggle buttons */}
+          <div className="flex items-center space-x-2 md:hidden">
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 animate-slide-down">
+        <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 animate-slide-down">
           <div className="px-4 py-4 space-y-3">
             {navItems.map((item) => (
               <a
@@ -84,7 +100,7 @@ const Navbar = () => {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="block text-gray-600 hover:text-brand-primary transition-colors duration-200 font-medium py-2"
+                className="block text-gray-600 dark:text-gray-300 hover:text-brand-primary transition-colors duration-200 font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
@@ -94,7 +110,7 @@ const Navbar = () => {
               href="https://t.me/HasiMusicBot?startgroup=true"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-black text-white block text-center py-3 rounded-md font-semibold mt-4"
+              className="bg-black dark:bg-brand-primary text-white dark:text-brand-dark block text-center py-3 rounded-md font-semibold mt-4"
             >
               Get in touch
             </a>

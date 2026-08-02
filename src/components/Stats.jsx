@@ -19,6 +19,13 @@ const Stats = () => {
       key: "groups",
     },
     {
+      icon: Users,
+      label: "Active Chats",
+      value: "100+",
+      target: 100,
+      key: "chats",
+    },
+    {
       icon: MusicIcon,
       label: "Songs Played",
       value: "200K+",
@@ -67,41 +74,41 @@ const Stats = () => {
   return (
     <section
       id="stats"
-      className="py-24 bg-brand-surface relative overflow-hidden"
+      className="py-24 bg-brand-surface dark:bg-gray-900/50 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-dark">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-brand-dark dark:text-white">
             Trusted by the community
           </h2>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-500 dark:text-gray-400 text-lg">
             Join the growing network of music lovers around the world on Telegram
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
               <div
                 key={index}
                 ref={(el) => (cardRefs.current[index] = el)}
-                className="group relative bg-white p-8 rounded-xl text-center border border-gray-100 hover:border-gray-300 transition-colors duration-200"
+                className="group relative bg-white dark:bg-gray-800 p-8 rounded-xl text-center border border-gray-100 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-colors duration-200"
                 style={{
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-                <div className="inline-flex p-4 rounded-xl bg-brand-accent mb-4 text-brand-secondary transition-transform duration-300 group-hover:scale-110">
+                <div className="inline-flex p-4 rounded-xl bg-brand-accent dark:bg-brand-primary/20 mb-4 text-brand-secondary dark:text-brand-primary transition-transform duration-300 group-hover:scale-110">
                   <Icon className="w-8 h-8" />
                 </div>
-                <div className="text-4xl font-bold mb-2 text-brand-dark">
+                <div className="text-4xl font-bold mb-2 text-brand-dark dark:text-white">
                   {stat.key === "songs"
                     ? Math.floor(counters[stat.key] / 1000) + "K+"
                     : stat.key === "uptime"
                       ? counters[stat.key] + "%"
                       : counters[stat.key] + "+"}
                 </div>
-                <div className="text-gray-500 font-medium">{stat.label}</div>
+                <div className="text-gray-500 dark:text-gray-400 font-medium">{stat.label}</div>
               </div>
             );
           })}

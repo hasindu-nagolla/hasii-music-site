@@ -7,18 +7,18 @@ const Hero = () => {
       className="pt-32 pb-20 px-4 md:px-8 lg:px-16 flex flex-col items-center justify-center text-center max-w-5xl mx-auto"
     >
       {/* Main Heading */}
-      <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-tight tracking-tight text-brand-dark mb-6 animate-slide-up">
+      <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-tight tracking-tight text-brand-dark dark:text-white mb-6 animate-slide-up">
         Let's build your next <br className="hidden md:block" />
         <span className="text-brand-primary">music experience.</span>
       </h1>
 
       <p
-        className="text-xl md:text-2xl text-gray-500 font-light max-w-3xl mb-12 animate-slide-up"
+        className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 font-light max-w-3xl mb-12 animate-slide-up"
         style={{ animationDelay: "0.1s" }}
       >
-        We deliver studio-quality audio from your first voice chat to a planet
+        We deliver Studio Quality audio from your first voice chat to a planet
         scale{" "}
-        <span className="font-semibold text-brand-dark">
+        <span className="font-semibold text-brand-dark dark:text-gray-200">
           Telegram community
         </span>
         .
@@ -38,20 +38,20 @@ const Hero = () => {
         style={{ animationDelay: "0.3s" }}
       >
         {/* Placeholder icons for tech stack (using text/colors for demonstration) */}
-        <div className="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-md">
-          <span className="font-bold text-blue-600">Python</span>
+        <div className="flex items-center space-x-2 bg-gray-50 dark:bg-gray-800/80 px-4 py-2 rounded-md">
+          <span className="font-bold text-blue-600 dark:text-blue-400">Python</span>
         </div>
-        <div className="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-md">
-          <span className="font-bold text-teal-500">Pyrogram</span>
+        <div className="flex items-center space-x-2 bg-gray-50 dark:bg-gray-800/80 px-4 py-2 rounded-md">
+          <span className="font-bold text-teal-500 dark:text-teal-400">Pyrogram</span>
         </div>
-        <div className="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-md">
-          <span className="font-bold text-green-600">MongoDB</span>
+        <div className="flex items-center space-x-2 bg-gray-50 dark:bg-gray-800/80 px-4 py-2 rounded-md">
+          <span className="font-bold text-green-600 dark:text-green-400">MongoDB</span>
         </div>
-        <div className="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-md">
-          <span className="font-bold text-red-500">yt-dlp</span>
+        <div className="flex items-center space-x-2 bg-gray-50 dark:bg-gray-800/80 px-4 py-2 rounded-md">
+          <span className="font-bold text-red-500 dark:text-red-400">yt-dlp</span>
         </div>
-        <div className="flex items-center space-x-2 bg-gray-50 px-4 py-2 rounded-md">
-          <span className="font-bold text-gray-700">Linux</span>
+        <div className="flex items-center space-x-2 bg-gray-50 dark:bg-gray-800/80 px-4 py-2 rounded-md">
+          <span className="font-bold text-gray-700 dark:text-gray-300">Linux</span>
         </div>
       </div>
 

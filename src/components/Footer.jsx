@@ -1,5 +1,5 @@
 import { Github, MessageCircle, ExternalLink } from "lucide-react";
-import FooterLogo from "../assets/download.svg";
+import Logo from "./Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -38,40 +38,35 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative z-10 bg-brand-surface-light border-t border-gray-100 mt-20">
+    <footer className="relative z-10 bg-brand-surface-light dark:bg-gray-900 border-t border-gray-100 dark:border-gray-700 mt-20">
       {/* Huge Pre-Footer CTA */}
       <div className="py-24 text-center">
-        <h2 className="text-3xl font-bold text-brand-dark mb-4">
+        <h2 className="text-3xl font-bold text-brand-dark dark:text-white mb-4">
           How can we help?
         </h2>
-        <p className="text-gray-500 mb-8 max-w-md mx-auto">
+        <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-md mx-auto">
           Let's have a quick chat or connect with us instantly to set up your
           Telegram community.
         </p>
         <a
-          href="https://t.me/hasiimusic"
+          href="https://t.me/HasiMusicBot?startgroup=true"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-8 py-4 rounded-md font-semibold text-white bg-brand-dark hover:bg-gray-800 active:scale-95 transition-all duration-200"
+          className="inline-block px-8 py-4 rounded-md font-semibold text-white dark:text-brand-dark bg-brand-dark dark:bg-brand-primary hover:bg-gray-800 dark:hover:bg-brand-primary/90 active:scale-95 transition-all duration-200"
         >
           Get in touch
         </a>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-100 dark:border-gray-700">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <a href="#home">
-              <img
-                src={FooterLogo}
-                alt="footer-image"
-                className="h-11"
-                w-auto
-              />
+              <Logo className="h-11 w-auto" />
             </a>
-            <p className="text-gray-500 text-sm mb-4">
+            <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
               Advanced Telegram music streaming bot with studio-quality audio
               and powerful features.
             </p>
@@ -80,7 +75,7 @@ const Footer = () => {
                 href="https://github.com/hasindu-nagolla/HasiiMusicBot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg text-gray-500 hover:bg-gray-100 hover:text-brand-primary transition-colors"
+                className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 hover:text-brand-primary transition-colors"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -88,7 +83,7 @@ const Footer = () => {
                 href="https://t.me/+VWlXK8QrYfZlYjNl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg text-gray-500 hover:bg-gray-100 hover:text-brand-primary transition-colors"
+                className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 hover:text-brand-primary transition-colors"
               >
                 <MessageCircle className="w-5 h-5" />
               </a>
@@ -97,7 +92,7 @@ const Footer = () => {
 
           {/* Product Links */}
           <div>
-            <h3 className="text-brand-dark font-semibold mb-4">Product</h3>
+            <h3 className="text-brand-dark dark:text-white font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
               {links.product.map((link) => (
                 <li key={link.name}>
@@ -109,7 +104,7 @@ const Footer = () => {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="text-gray-500 hover:text-brand-primary transition-colors text-sm flex items-center gap-1"
+                    className="text-gray-500 dark:text-gray-400 hover:text-brand-primary transition-colors text-sm flex items-center gap-1"
                   >
                     {link.name}
                     {link.href.startsWith("http") && (
@@ -123,7 +118,7 @@ const Footer = () => {
 
           {/* Community Links */}
           <div>
-            <h3 className="text-brand-dark font-semibold mb-4">Community</h3>
+            <h3 className="text-brand-dark dark:text-white font-semibold mb-4">Community</h3>
             <ul className="space-y-2">
               {links.community.map((link) => (
                 <li key={link.name}>
@@ -131,7 +126,7 @@ const Footer = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-brand-primary transition-colors text-sm flex items-center gap-1"
+                    className="text-gray-500 dark:text-gray-400 hover:text-brand-primary transition-colors text-sm flex items-center gap-1"
                   >
                     {link.name}
                     <ExternalLink className="w-3 h-3" />
@@ -143,7 +138,7 @@ const Footer = () => {
 
           {/* Resources Links */}
           <div>
-            <h3 className="text-brand-dark font-semibold mb-4">Resources</h3>
+            <h3 className="text-brand-dark dark:text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
               {links.resources.map((link) => (
                 <li key={link.name}>
@@ -151,7 +146,7 @@ const Footer = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-brand-primary transition-colors text-sm flex items-center gap-1"
+                    className="text-gray-500 dark:text-gray-400 hover:text-brand-primary transition-colors text-sm flex items-center gap-1"
                   >
                     {link.name}
                     <ExternalLink className="w-3 h-3" />
@@ -163,9 +158,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 mt-12 border-t border-gray-100">
+        <div className="pt-8 mt-12 border-t border-gray-100 dark:border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm text-center md:text-left">
+            <p className="text-gray-500 dark:text-gray-400 text-sm text-center md:text-left">
               © {currentYear} HasiiMusicBot. All rights reserved. Developed by{" "}
               <a
                 href="https://github.com/hasindu-nagolla"
@@ -176,7 +171,7 @@ const Footer = () => {
                 Hasindu
               </a>
             </p>
-            <div className="flex items-center gap-6 text-sm text-gray-500"></div>
+            <div className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400"></div>
           </div>
         </div>
       </div>

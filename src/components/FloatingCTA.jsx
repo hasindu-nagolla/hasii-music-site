@@ -25,19 +25,18 @@ const FloatingCTA = () => {
     <>
       {/* Mobile floating button */}
       <div
-        className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ${
-          isVisible
+        className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ${isVisible
             ? "translate-y-0 opacity-100"
             : "translate-y-20 opacity-0 pointer-events-none"
-        }`}
+          }`}
       >
         <div className="relative group">
           {/* Main button */}
           <a
-            href="https://t.me/HasiMusicBot?startgroup=true"
+            href="https://t.me/hasiimusic"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center gap-2 px-6 py-4 bg-brand-dark text-white font-semibold rounded-full shadow-md hover:bg-gray-800 active:scale-95 transition-all duration-200"
+            className="relative flex items-center gap-2 px-6 py-4 bg-brand-dark dark:bg-brand-primary text-white dark:text-brand-dark font-semibold rounded-full shadow-md hover:bg-gray-800 dark:hover:bg-brand-primary/90 active:scale-95 transition-all duration-200"
           >
             <MessageCircle className="w-5 h-5" />
             <span className="hidden sm:inline">Quick Start</span>
@@ -46,7 +45,7 @@ const FloatingCTA = () => {
           {/* Dismiss button */}
           <button
             onClick={() => setIsDismissed(true)}
-            className="absolute -top-2 -right-2 p-1 bg-gray-200 rounded-full text-gray-500 hover:bg-gray-300 hover:text-gray-700 transition-colors duration-200 opacity-0 group-hover:opacity-100"
+            className="absolute -top-2 -right-2 p-1 bg-gray-200 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-300 hover:text-gray-700 transition-colors duration-200 opacity-0 group-hover:opacity-100"
             aria-label="Dismiss"
           >
             <X className="w-3 h-3" />

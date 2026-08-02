@@ -6,13 +6,14 @@ import Commands from "./components/Commands";
 import Stats from "./components/Stats";
 import OpenSource from "./components/OpenSource";
 import Footer from "./components/Footer";
-import ParticlesBackground from "./components/ParticlesBackground";
 import FloatingCTA from "./components/FloatingCTA";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 function App() {
   return (
     <Router>
-      <div className="relative min-h-screen bg-brand-surface-light text-brand-dark overflow-hidden font-sans">
+      <div className="relative min-h-screen bg-brand-surface-light dark:bg-brand-dark text-brand-dark dark:text-white overflow-hidden font-sans">
+        <ParticlesBackground />
         <Navbar />
         <main className="relative z-10">
           <Hero />
