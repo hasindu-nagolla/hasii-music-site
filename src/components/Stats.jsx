@@ -13,15 +13,15 @@ const Stats = () => {
     {
       icon: Users,
       label: "Served Groups",
-      value: "540+",
-      target: 540,
+      value: "600+",
+      target: 600,
       key: "groups",
     },
      {
       icon: Users,
       label: "Active Chats",
-      value: "100+",
-      target: 100,
+      value: "200+",
+      target: 200,
       key: "chats",
     },
     {
@@ -41,8 +41,8 @@ const Stats = () => {
     {
       icon: TrendingUp,
       label: "Uptime",
-      value: "99%",
-      target: 99,
+      value: "90%",
+      target: 90,
       key: "uptime",
     },
   ];
